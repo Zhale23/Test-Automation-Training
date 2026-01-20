@@ -48,7 +48,13 @@ public abstract class BasePage {
         clickableElement.click();
         return clickableElement;
     }
-    public List<WebElement> getListOfElements(By element) {
+
+    // public WebElement clickElement(WebElement element) {
+    //     WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+    //     clickableElement.click();
+    //     return clickableElement;
+    // }
+    public List<WebElement> getListOfElements(By element ) {
         return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
     }
 

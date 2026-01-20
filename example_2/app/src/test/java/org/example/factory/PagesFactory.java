@@ -2,6 +2,7 @@ package org.example.factory;
 
 import org.example.pages.AmazonHomePage;
 import org.example.pages.AmazonProductDetailPage;
+import org.example.pages.AmazonSearchResults;
 import org.openqa.selenium.WebDriver;
 
 public class PagesFactory {
@@ -18,5 +19,9 @@ public class PagesFactory {
 
     public AmazonProductDetailPage detail() {
         return new AmazonProductDetailPage(driver);
+    }
+
+    public AmazonSearchResults search() {
+        return new AmazonSearchResults(driver);
     }
 }

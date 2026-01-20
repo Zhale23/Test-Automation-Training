@@ -42,8 +42,10 @@ public class AmazonTestHooks {
     }
 
     @AfterTest
-    public void teardown() {
+    public void teardown() throws InterruptedException {
         if (driver != null) {
+            System.out.println("Esperando 5 segundos antes de cerrar el navegador...");
+            Thread.sleep(5000);
             driver.quit();
         }
     }

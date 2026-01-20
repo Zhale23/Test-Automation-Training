@@ -12,7 +12,6 @@ public class AmazonHomePage extends BasePage {
 
     private static final By SEARCH_TEXT_BOX = By.id("twotabsearchtextbox");
     private static final By SEARCH_RESULTS_CONTAINER = By.className("sg-col-inner");
-    private static final By SEARCH_RESULTS_ITEM_LINK = By.cssSelector("a.a-link-normal.s-line-clamp-4");
 
     public AmazonHomePage(WebDriver driver) {
         super(driver);
@@ -38,13 +37,6 @@ public class AmazonHomePage extends BasePage {
 
         assertTrue(count >= expectedMinimumCount, "Expected more than 7 iPhones results, but found only" + count);
 
-    }
-
-    public void clickFirstSearchResult(WebDriver driver) {
-        List<WebElement> links = driver.findElements(SEARCH_RESULTS_ITEM_LINK);
-        if (links.size() > 0) {
-            links.get(0).click();
-        }
     }
 
 }

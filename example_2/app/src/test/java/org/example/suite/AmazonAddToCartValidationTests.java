@@ -9,7 +9,7 @@ public class AmazonAddToCartValidationTests extends AmazonTestHooks {
     public void shouldAddFirstIphoneToCartWhenSearching() {
 
         factory.amazon().searchItem("iPhone");
-        factory.amazon().clickFirstSearchResult(driver);
+        factory.search().clickFirstSearchResult(driver);
         factory.detail().assertDetailPageIsDisplayed();
         factory.detail().clickAddToCartButton();
         factory.detail().confirmAddToCartAppleCare();
