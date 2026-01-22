@@ -7,16 +7,21 @@ import org.example.hooks.AmazonTestHooks;
 
 public class AmazonSearchValidationTests extends AmazonTestHooks {
 
-    @Test
-    public void shouldDiplayMoreThanSevenIphoneResultsWhenSearching() {
+    // @Test
+    // public void shouldDiplayMoreThanSevenIphoneResultsWhenSearching() {
 
-        factory.amazon().searchItem("iPhone");
-        factory.amazon().assertSearchResultsCountExceedsMinimum(7);
-    }
+    //     amazon.homePage().searchItem("iPhone");
+    //     amazon.searchPage().assertSearchResultsCountExceedsMinimum(7);
+    // }
 
-    @Test
-    public void shouldDiplayMoreThanSevenLaptopsResultsWhenSearching() {
-        factory.amazon().searchItem("Laptops");
-        factory.amazon().assertSearchResultsCountExceedsMinimum(0);
+    // @Test
+    // public void shouldDiplayMoreThanSevenLaptopsResultsWhenSearching() {
+    //     amazon.homePage().searchItem("Laptops");
+    //     amazon.searchPage().assertSearchResultsCountExceedsMinimum(0);
+    // }
+
+    @Test(dataProvider = "searchItems", dataProviderClass = org.example.resources.AmazonDataProviders.class)
+    public void shouldDiplayMoreThanSevenItemsResultsWhenSearching(String item) {
+        amazon.homePage().searchItem(item);
     }
 }

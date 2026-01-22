@@ -22,7 +22,7 @@ public class AmazonTestHooks {
     public WebDriverWait wait;
     public Actions action;
     public static AmazonHomePage homePage;
-    public static PagesFactory factory;
+    public static PagesFactory amazon;
 
     @BeforeTest
     public void setup() {
@@ -38,7 +38,7 @@ public class AmazonTestHooks {
         driver.manage().window().maximize();
         driver.get(AmazonTestConfig.Environment.PRODUCTION_URL);
 
-        factory = new PagesFactory(driver);
+        amazon = new PagesFactory(driver);
     }
 
     @AfterTest

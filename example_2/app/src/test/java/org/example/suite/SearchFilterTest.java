@@ -7,7 +7,7 @@ public class SearchFilterTest extends AmazonTestHooks {
 
     @Test
     public void testApplyFirstFilter() {
-        factory.amazon().searchItem("Headphones");
-        factory.search().applyFirstFilter();
+        amazon.homePage().searchItem("Headphones");
+        amazon.searchPage().applyFirstFilter();
     }
 }

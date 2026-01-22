@@ -49,11 +49,11 @@ public abstract class BasePage {
         return clickableElement;
     }
 
-    // public WebElement clickElement(WebElement element) {
-    //     WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
-    //     clickableElement.click();
-    //     return clickableElement;
-    // }
+    public WebElement clickElementByWebElement(WebElement element) {
+        WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+        clickableElement.click();
+        return clickableElement;
+    }
     public List<WebElement> getListOfElements(By element ) {
         return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
     }

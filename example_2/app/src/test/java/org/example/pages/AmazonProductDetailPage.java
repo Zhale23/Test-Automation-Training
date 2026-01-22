@@ -19,26 +19,28 @@ public class AmazonProductDetailPage extends BasePage {
     }
 
     public void assertDetailPageIsDisplayed() {
-        WebElement detailPageElement = getElement(PRODUCT_TITLE);
-        WebElement addToCartButton = getElement(ADD_TO_CART_BUTTON);
-        assertTrue(detailPageElement.isDisplayed() && addToCartButton.isDisplayed(), "Detail page is not displayed.");
+        assertTrue(getElement(PRODUCT_TITLE).isDisplayed() && getElement(ADD_TO_CART_BUTTON).isDisplayed(), "Detail page is not displayed.");
     }
 
     public void clickAddToCartButton() {
-        WebElement addToCartButton = getElement(ADD_TO_CART_BUTTON);
-        addToCartButton.click();
+        clickElement(ADD_TO_CART_BUTTON);
     }
 
     public void assertItemAddedToCart() {
-        WebElement confirmationMessage = getElement(CONFIRMATION_MESSAGE);
-        assertTrue(confirmationMessage.isDisplayed(), "Item was not added to cart successfully.");
+        assertTrue(getElement(CONFIRMATION_MESSAGE).isDisplayed(), "Item was not added to cart successfully.");
     }
 
-    public void confirmAddToCartAppleCare(){
-        WebElement confrimationAppleCareSection = getElement(ADD_TO_CART_APPLE_CARE_SECTION);
-        if (confrimationAppleCareSection.isDisplayed()) {
+    public void confirmAddToCartAppleCare() {
+        if (getElement(ADD_TO_CART_APPLE_CARE_SECTION).isDisplayed()) {
             clickElement(CLOSE_BUTTON_APPLE_CARE_SECTION);
         }
-        assertTrue(confrimationAppleCareSection.isDisplayed(), "Apple Care section is not displayed after adding to cart.");
+        assertTrue(getElement(ADD_TO_CART_APPLE_CARE_SECTION).isDisplayed(),
+                "Apple Care section is not displayed after adding to cart.");
+    }
+
+    public void AddToCart() {
+        clickAddToCartButton();
+        confirmAddToCartAppleCare();
+        assertItemAddedToCart();
     }
 }

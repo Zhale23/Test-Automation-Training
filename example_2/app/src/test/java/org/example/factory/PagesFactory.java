@@ -13,15 +13,15 @@ public class PagesFactory {
         this.driver = driver;
     }
 
-    public AmazonHomePage amazon() {
+    public AmazonHomePage homePage() {
         return new AmazonHomePage(driver);
     }
 
-    public AmazonProductDetailPage detail() {
+    public AmazonProductDetailPage detailPage() {
         return new AmazonProductDetailPage(driver);
     }
 
-    public AmazonSearchResults search() {
+    public AmazonSearchResults searchPage() {
         return new AmazonSearchResults(driver);
     }
 }

@@ -49,4 +49,9 @@ public class AmazonSearchResults extends BasePage {
         assertTrue(brandListItems.size() > 0, "No se encontraron filtros de marca para aplicar.");
     }
 
+    public void assertSearchResultsCountExceedsMinimum(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'assertSearchResultsCountExceedsMinimum'");
+    }
+
 }
