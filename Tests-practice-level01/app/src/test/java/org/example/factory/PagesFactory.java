@@ -11,7 +11,7 @@ public class PagesFactory {
         this.driver = driver;
     }
 
-    public HomePage home() {
+    public HomePage homePage() {
         return new HomePage(driver);
     }
 

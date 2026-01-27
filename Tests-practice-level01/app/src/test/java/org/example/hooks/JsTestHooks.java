@@ -18,7 +18,7 @@ public class JsTestHooks {
     public WebDriverWait wait;
     public Actions action;
     public static HomePage homePage;
-    public static PagesFactory factory;
+    public static PagesFactory theInternet;
 
     @BeforeTest
     public void setup() {
@@ -29,7 +29,7 @@ public class JsTestHooks {
         driver.manage().window().maximize();
         driver.get(JsTestConfig.Environment.PRODUCTION_URL);
 
-        factory = new PagesFactory(driver);
+        theInternet = new PagesFactory(driver);
     }
 
     @AfterTest

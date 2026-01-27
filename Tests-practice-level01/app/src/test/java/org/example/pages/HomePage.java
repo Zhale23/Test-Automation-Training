@@ -15,7 +15,7 @@ public class HomePage extends BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static final By THIRD_LIST_ITEM = By.xpath("//div[@class='example']//ul/li[3]");
+    public static final By THIRD_LIST_ITEM = By.xpath("//div[@class='example']//ul/li[3]/button");
     public static final String TEXT_TO_TYPE_IN_ALERT = "Hello World";
     public static final By TEXT_TIPED_SHOW_ITEM = By.id("result");
 
@@ -27,6 +27,7 @@ public class HomePage extends BasePage {
 
     public void clickThirdElement() {
         getElement(THIRD_LIST_ITEM).click();
+        System.out.println("ELEMENTO:" + THIRD_LIST_ITEM);
     }
 
     public void JsAlertTypeAndConfirm() {
@@ -39,5 +40,11 @@ public class HomePage extends BasePage {
     public void JsAlertTextTypedConfirm() {
         assertTrue(getElement(TEXT_TIPED_SHOW_ITEM).getText().contains(TEXT_TO_TYPE_IN_ALERT),
                 "The text typed in the alert is not shown in the page");
+    }
+
+    public void jsAlertTestFinal(){
+        clickThirdElement();
+        JsAlertTypeAndConfirm();
+        JsAlertTextTypedConfirm();
     }
 }

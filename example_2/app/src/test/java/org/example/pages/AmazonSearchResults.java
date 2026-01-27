@@ -50,7 +50,6 @@ public class AmazonSearchResults extends BasePage {
     }
 
     public void assertSearchResultsCountExceedsMinimum(int i) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'assertSearchResultsCountExceedsMinimum'");
     }
 
