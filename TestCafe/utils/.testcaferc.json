@@ -1,0 +1,11 @@
+{
+    "browsers": ["chrome"],
+    "src": "tests/",
+    "screenshots": {
+        "path": "reports/screenshots/",
+        "takeOnFails": true
+    },
+    "selectorTimeout": 5000,
+    "assertionTimeout": 7000,
+    "quarantineMode": true
+}
